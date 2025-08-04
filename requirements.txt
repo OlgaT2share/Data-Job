@@ -3,4 +3,4 @@ streamlit
 pandas
 numpy
 seaborn
-natsorted
+natsort
