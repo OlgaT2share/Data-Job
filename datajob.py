@@ -704,7 +704,7 @@ if page == "Méthodologie ou démarche de travail":
     # Bouton pour accéder au bilan GitHub
   st.link_button(
         "📖 Consulter le bilan personnel complet sur GitHub", 
-        "https://github.com/OlgaT2share/Data-Job/edit/main/Bilan%20personnel%20projet%20Data%20Job.md",
+        "https://github.com/OlgaT2share/Data-Job/edit/main/Bilan%20personnel%20projet%20Data%20Job.md?plain=1",
         help="Accéder au rapport détaillé de méthodologie et bilan personnel"
     )
     
