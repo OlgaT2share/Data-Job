@@ -284,8 +284,8 @@ if page == pages[0]:
 
                 fig.update_layout(
                 coloraxis_colorbar=dict(
-                title="",  # Nouveau titre de la légende
-                titleside="right" )) # Position du titre
+                title=""  # Nouveau titre de la légende
+                 )) # Position du titre
     
 
                 st.plotly_chart(fig, use_container_width=True)
