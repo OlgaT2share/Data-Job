@@ -1,4 +1,4 @@
-Bilan personnel projet Data Job
+
 1. Méthodologie de Travail et Rôle dans l'Équipe
 
 Notre équipe a adopté une méthodologie de travail collaborative et efficace. La tactique employée était la suivante :
