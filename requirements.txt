@@ -5,4 +5,4 @@ numpy
 seaborn
 natsort
 plotly.express
-plotly>=5.18.0
+plotly
