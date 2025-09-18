@@ -163,7 +163,7 @@ if page == pages[1] :
   st.write("##### Apercu du jeu de donnée avant nettoyage")
   st.dataframe(d.head(10))
   st.write("Dimenssion du DataFrame:",d.shape)
-  st.write("##### Description du DataFrame")
+  st.write("##### Description du DataFrame avant nettoyage")
   st.dataframe(d.describe())
   if st.checkbox("Afficher le type des colonne"):
     st.dataframe(d.dtypes)
@@ -198,7 +198,7 @@ else:
      st.write("##### Apercu du jeu de donnée après nettoyage")
      st.dataframe(df.head(10))
      st.write("Dimenssion du DataFrame:",df.shape)
-     st.write("##### Description du DataFrame")
+     st.write("##### Description du DataFrame après nettoyage")
      st.dataframe(df.describe())
     
      with col2:
