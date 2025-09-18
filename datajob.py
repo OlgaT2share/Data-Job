@@ -370,7 +370,7 @@ if page == pages[3]:
                 fig.update_layout(
                 coloraxis_colorbar=dict(
                 title="",  # Nouveau titre de la légende
-                )) # Position du titre
+                )) 
     
 
                 st.plotly_chart(fig, use_container_width=True)
@@ -401,6 +401,7 @@ if page == pages[3]:
             
 #------------------------------------------------------------------------------------------------------------------------  
 if page == pages[4]:
+  
     # =============================================
     # SECTION FILTRES - Dans la sidebar
     # =============================================
@@ -696,8 +697,111 @@ if page == pages[4]:
 
 
 #-----------------------------------------------------------------------------------
+#methodologie ou demarche de travail
+#if page == pages[5]:
+if page == "Méthodologie ou démarche de travail":
+  
+    # Bouton pour accéder au bilan GitHub
+  st.link_button(
+        "📖 Consulter le bilan personnel complet sur GitHub", 
+        "https://github.com/OlgaT2share/Data-Job/edit/main/Bilan%20personnel%20projet%20Data%20Job.md",
+        help="Accéder au rapport détaillé de méthodologie et bilan personnel"
+    )
+    
+
+  def afficher_methodologie():
+    st.markdown("---")
+    st.header("📊 Méthodologie et Démarche de Travail")
+    
+    # Section 1: Approche collaborative
+    st.subheader("🤝 Approche Collaborative Structurée")
+    st.markdown("""
+    - **Méthodologie agile** combinant travail autonome et synchronisation d'équipe
+    - **Processus en 4 étapes** : 
+      → Analyse indépendante  
+      → Partage collectif  
+      → Sélection de solutions simples  
+      → Enrichissement progressif
+    - **Points de synchronisation réguliers** pour l'alignement d'équipe
+    """)
+    
+    # Section 2: Démarche technique
+    st.subheader("⚙️ Démarche Technique Rigoureuse")
+    st.markdown("""
+    1. **Configuration initiale** : Environnement technique optimisé (Anaconda, VS Code, Python 3.12.7)
+    2. **Compréhension du contexte** : Analyse approfondie du jeu de données et objectifs
+    3. **Développement itératif** :
+       - Optimisation continue des fonctions
+       - Approche de nettoyage ciblé selon les besoins
+       - Intégration de mécanismes de performance (@st.cache_data)
+    """)
+    
+    # Section 3: Gestion des défis
+    st.subheader("🚧 Gestion des Défis Techniques")
+    st.markdown("""
+    - Résolution proactive des problèmes d'environnement (dépendances MacOS)
+    - Gestion des versions et déploiement (containerisation)
+    - Adaptation aux contraintes techniques (données catégorielles)
+    """)
+    
+    # Section 4: Double dimension
+    st.subheader("🔀 Double Dimension de Travail")
+    st.markdown("""
+    - **Collaborative** : Contributions aux rendus d'équipe, partage d'analyses
+    - **Autonome** : Développement complet d'application Streamlit personnelle
+    """)
+    
+    # Section 5: Démarche analytique
+    st.subheader("🔍 Démarche Analytique Critique")
+    st.markdown("""
+    - Identification consciente des limitations (données 2020)
+    - Réflexion sur la portée réelle de l'analyse
+    - Capitalisation sur l'expérience pour monter en compétences
+    """)
+    
+    # Section 6: Philosophie de développement
+    st.subheader("🎯 Philosophie de Développement")
+    st.markdown("""
+    - Priorité à l'interface épurée et aux performances
+    - Visualisations interactives et pertinentes
+    - Approche full-stack : de l'analyse au déploiement
+    """)
+    
+    st.markdown("---")
+
+ # Appel de la fonction dans votre application
+  afficher_methodologie()
+   
+ 
+#-----------------------------------------------------------------------------------
+#machine learning
+if page == "Machine learning":
 
 
+   st.title("🚧 Work in Progress")
+   st.write("Cette page est actuellement en cours de développement.")
+   st.info("Revenez bientôt pour découvrir le contenu final !")
+
+# Animation simple
+   st.progress(50)
+
+#-----------------------------------------------------------------------------------
+#conclusion
+
+if page == "conclusion":
+  st.markdown("---")
+  st.header("🎯 Conclusion  et Bilan")
+
+  conclusion = """
+ Ce projet m'a permis de transformer des données brutes en visualisations éclairantes à travers une application interactive performante. Ce travail m'a permis de consolider mon expertise en data visualization, en développement web avec Streamlit et en optimisation d'applications. Je suis satisfaite d'avoir concrétisé significativement la vision du projet à travers cette interface.
+
+ Cette expérience a été une opportunité majeure de développement de mes compétences techniques et analytiques, notamment dans le nettoyage, l'exploration et la visualisation de données sur un jeu de données réel et assez complexe. Je me suis challengée à chaque étape, en allant bien au-delà des contenus de formation pour réaliser des traitements avancés en Python et maîtriser les bibliothèques de visualisation (Seaborn, Matplotlib, Streamlit, Plotly) en autonomie. Cette immersion a renforcé ma capacité à produire des scripts performants et ma confiance dans la conception d'analyses pertinentes.
+
+ J'ai pu constater à quel point les enquêtes de ce type constituent une boussole précieuse pour les aspirants au métier de la data, offrant des insights sur les compétences à développer et les tendances du marché. Bien que non récent, ce sondage reste un référentiel précieux des compétences valorisées dans le domaine de la data et a servi de base solide à une analyse rigoureuse.
+ """
+
+  st.markdown(conclusion)
+  st.markdown("---")
 
 
 
