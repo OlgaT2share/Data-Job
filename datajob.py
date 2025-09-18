@@ -367,11 +367,11 @@ if page == pages[3]:
                     title="Répartition par niveau d'éducation"
                 )
 
-                fig.update_layout(
-                coloraxis_colorbar=dict(
-                title="",  # Nouveau titre de la légende
+               # fig.update_layout(
+               # coloraxis_colorbar=dict(
+               # title="",  # Nouveau titre de la légende
                 #title_side="right" 
-                )) # Position du titre
+               # )) # Position du titre
     
 
                 st.plotly_chart(fig, use_container_width=True)
