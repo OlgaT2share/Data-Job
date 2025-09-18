@@ -10,7 +10,7 @@ Mon rôle dans cette équipe a été actif et contributeur. J'ai mené mes explo
 
 2. Réalisation Technique Personnelle : Application Streamlit
 
-Lien vers l'application Streamlit développée personnellement : https://data-job-ehxsunsakarnijmlpsfden.streamlit.app/
+Lien vers l'application Streamlit développée personnellement : ;;;;;;;;;;
 
 J'ai conçu et développé cette application Streamlit dans le but d'analyser et de visualiser les résultats de l'enquête Kaggle 2020 sur le Machine Learning et la Science des Données, en proposant une analyse personnelle et originale.
 
