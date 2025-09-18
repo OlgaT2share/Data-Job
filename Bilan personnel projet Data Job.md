@@ -22,15 +22,15 @@ Ce projet s'inscrit dans la construction active de mon portfolio data et démont
 
 3. Exploration et Compréhension du Projet
 
-a. Mise en Place de l'Environnement :
+   a. Mise en Place de l'Environnement :
 
 J'ai configuré mon environnement de travail technique en installant Anaconda et VS Code avec Python 3.12.7, assurant ainsi la compatibilité avec les bibliothèques nécessaires au projet (Pandas, NumPy, Matplotlib, Seaborn, Streamlit).
 
-b. Acquisition et Compréhension des Données :
+   b. Acquisition et Compréhension des Données :
 
 J'ai téléchargé le jeu de données du Kaggle ML & DS Survey 2020 sur la plateforme Kaggle. J'ai ensuite consacré du temps à comprendre le contexte de cette enquête annuelle, son objectif (identifier les tendances, les outils et le profil des professionnels de la data) et sa valeur pour la communauté.
 
-c. Objectifs Définis :
+   c. Objectifs Définis :
 
 Mon analyse visait à :
 - Fournir une vue d'ensemble des pratiques et tendances en data en 2020
@@ -40,7 +40,7 @@ Mon analyse visait à :
 
 4. Réalisations Techniques et Défis Relevés
 
-a. Prétraitement et Nettoyage des Données :
+   a. Prétraitement et Nettoyage des Données :
 
 Développement et optimisation d'une fonction d'agrégation Python : J'ai développé et optimisé une fonction en Python pour regrouper les réponses aux QCM d'une même question (réparties sur plusieurs colonnes) en une seule colonne exploitable, simplifiant ainsi l'analyse.
 
@@ -48,7 +48,7 @@ La première version de ma fonction était basée sur une boucle for et, bien qu
 
 Nettoyage et préparation des données : J'ai procédé à un nettoyage fondamental incluant la suppression des doublons, l'élimination des colonnes non pertinentes pour nos objectifs ou contenant une majorité de valeurs manquantes, ainsi que le renommage des colonnes pour une meilleure lisibilité.
 
-b. Analyse Exploratoire des Données et Visualisation :
+   b. Analyse Exploratoire des Données et Visualisation :
 
 Mon analyse initiale a permis de dégager rapidement les tendances principales, confirmées par la suite avec l'équipe :
 - Python est le langage de programmation dominant
@@ -71,7 +71,7 @@ Dans le cadre du deuxième rendu, j'ai également participé à la conception et
 
 6. Défis techniques et limitations
 
-a. Défis techniques surmontés :
+   a. Défis techniques surmontés :
 
 - Configuration et installation manuelle de bibliothèques spécifiques sur VS Code avec un environnement MacOS, nécessitant une résolution avancée de dépendances
 - Gestion des conflits de versions Python entre l'environnement local et le cloud lors du déploiement sur GitHub, résolus par la containerisation et la configuration précise des requirements
@@ -80,7 +80,7 @@ a. Défis techniques surmontés :
 - Sélection stratégique et implémentation complète de l'interface Streamlit pour une présentation interactive des résultats
 - Intégration avancée du système de cache via @st.cache_data pour optimiser les performances et réduire les temps de chargement
 
-b. Limitations et analyse critique :
+   b. Limitations et analyse critique :
 
 Mon analyse m'a conduit à identifier plusieurs limitations importantes :
 
