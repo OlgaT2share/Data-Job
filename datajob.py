@@ -160,7 +160,7 @@ if page == pages[1] :
   def load_data():
    return pd.read_csv('kaggle_survey_2020_responses.csv')
   d=load_data()
-  st.write("##### Apercu du jeu de donnée")
+  st.write("##### Apercu du jeu de donnée avant nettoyage")
   st.dataframe(d.head(10))
   st.write("Dimenssion du DataFrame:",d.shape)
   st.write("##### Description du DataFrame")
@@ -195,7 +195,7 @@ else:
     col1, col2 = st.columns([3, 1])
     with col1:
      
-     st.write("##### Apercu du jeu de donnée")
+     st.write("##### Apercu du jeu de donnée après nettoyage")
      st.dataframe(df.head(10))
      st.write("Dimenssion du DataFrame:",df.shape)
      st.write("##### Description du DataFrame")
