@@ -108,7 +108,7 @@ def clean_data(df) :
 
 st.title("Projet Data Job")
 st.sidebar.title("Sommaire")
-pages=["Profil des Répondants","Analyse Metiers","Méthodologie ou démarche de travail","conclusion et perspective","Remerciements"]
+pages=["Le projet Data Job","Exploration des données bruttes","Pré-traitement et nettoyage","Profil des Répondants","Analyse Metiers","Méthodologie ou démarche de travail","Machine learning","conclusion"]
 page=st.sidebar.radio("Aller vers", pages)
 
 #------------------------------------------------------------------------------------------------------------------------
@@ -125,6 +125,91 @@ def load_data():
      df = clean_data(df)
      return df
 df=load_data()
+#----------------------------------------------------------------------------------------------------------------------------------
+if page == pages[0] : 
+  st.write("### Intruduction ")
+  st.markdown("""
+Le sondage « Kaggle 2020 » fournit une base de données riche pour comprendre les métiers de la science des données et 
+leur évolution. Réalisée par la plateforme Kaggle, l’enquête recueille les réponses de plus de 20 000 professionnels 
+du monde entier, abordant leurs rôles, outils, langages, plateformes, formations et pratiques. Cette diversité offre 
+un aperçu représentatif du secteur à l’échelle internationale.
+""")
+
+  st.write("### Problématique & Objectifs")
+  st.markdown("""La problémaatique retenue est la suivante :
+              
+Comment les réponses à l’enquête ou au sondage Kaggle 2020 permettent-elles de comprendre et de caractériser les différents profils techniques au sein de l'industrie de la Data, en se concentrant sur les tâches effectuées et les outils utilisés ?
+
+L’analyse vise à:
+
+- Identifier les outils et technologies les plus utilisés (langages, frameworks, IDE).
+
+- Comprendre le profil démographique des répondants (âge, genre, pays, éducation).
+
+- Explorer les pratiques professionnelles (fonctions occupées, usage du machine learning).
+
+- Détecter les tendances futures à travers les outils que les répondants souhaitent apprendre d’ici deux ans.
+""")
+
+
+#------------------------------------------------------------------------------------------------------------------------
+#configuration 2eme page Exploration des données bruttes" 
+
+if page == pages[1] : 
+  @st.cache_data
+  def load_data():
+   return pd.read_csv('kaggle_survey_2020_responses.csv')
+  d=load_data()
+  st.write("##### Apercu du jeu de donnée")
+  st.dataframe(d.head(10))
+  st.write("Dimenssion du DataFrame:",d.shape)
+  st.write("##### Description du DataFrame")
+  st.dataframe(d.describe())
+  if st.checkbox("Afficher le type des colonne"):
+    st.dataframe(d.dtypes)
+  if st.checkbox("Afficher le pourcentage de valeurs manquantes  (NA)") :
+     st.dataframe(d.isna().mean() * 100)
+     #st.dataframe(df.isna().sum())
+  if st.checkbox("Afficher le nombre de doublon") :
+     st.write(d.duplicated().sum())
+  
+
+#------------------------------------------------------------------------------------------------------------------------
+#recharger le dataframe en ignorant la premiere ligne et l'enregistrer dans le cache
+else:
+ 
+  @st.cache_data
+  def load_data():
+     df=pd.read_csv('kaggle_survey_2020_responses.csv',skiprows=[1])
+     df = clean_data(df)
+     return df
+  df=load_data()
+
+#------------------------------------------------------------------------------------------------------------------------
+ #configuration 3eme page Pré-traitement et nettoyage df
+  if page == pages[2] :
+    st.markdown("""Un nettoyage des données a été effectué pour réduire la taille du DataFrame de 355 à 25 colonnes,
+   en regroupant les questions à choix multiples. Un traitement des valeurs manquantes (suppression des colonnes avec 
+   plus de 80 %\ de valeurs manquantes) et des doublons a également été réalisé. Enfin, les colonnes ont été renommées avec des noms explicites pour faciliter la lecture et l’analyse
+   """)
+    col1, col2 = st.columns([3, 1])
+    with col1:
+     
+     st.write("##### Apercu du jeu de donnée")
+     st.dataframe(df.head(10))
+     st.write("Dimenssion du DataFrame:",df.shape)
+     st.write("##### Description du DataFrame")
+     st.dataframe(df.describe())
+    
+     with col2:
+      st.write("##### Statistiques descriptives")
+      st.write(f"Nombre total de répondants: {len(df)}")
+        
+      st.metric("Pourcentage d'hommes",f"{round(df[df['Gender']=='Man'].shape[0]/len(df)*100, 1)}%")
+      st.metric("Pourcentage de femmes", f"{round(df[df['Gender']=='Woman'].shape[0]/len(df)*100, 1)}%")
+
+
+
 
 #------------------------------------------------------------------------------------------------------------------------
  #configuration 3eme page Pré-traitement et nettoyage df
@@ -135,7 +220,7 @@ df=load_data()
 
  #configuration 4eme page Analyse démographique"
 
-if page == pages[0]:
+if page == pages[3]:
     # =============================================
     # SECTION FILTRES - Dans la sidebar
     # =============================================
@@ -284,8 +369,8 @@ if page == pages[0]:
 
                 fig.update_layout(
                 coloraxis_colorbar=dict(
-                title=""  # Nouveau titre de la légende
-                 )) # Position du titre
+                title="",  # Nouveau titre de la légende
+                )) # Position du titre
     
 
                 st.plotly_chart(fig, use_container_width=True)
@@ -315,7 +400,7 @@ if page == pages[0]:
             st.plotly_chart(fig, use_container_width=True)
             
 #------------------------------------------------------------------------------------------------------------------------  
-if page == pages[1]:
+if page == pages[4]:
     # =============================================
     # SECTION FILTRES - Dans la sidebar
     # =============================================
@@ -610,19 +695,13 @@ if page == pages[1]:
          st.plotly_chart(fig)
 
 
+#-----------------------------------------------------------------------------------
 
 
 
 
 
-
-
-
-
-
-
-
-
+#-----------------------------------------------------------------------------------
 
 st.sidebar.markdown("---")
 
